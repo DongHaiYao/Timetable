@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg4"
+    >
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="150dp"
+        android:text="输入导入课程的信息:"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/impot_name"
+        android:layout_marginTop="-66dp"
+        android:text="课程名："
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/impot_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/impot_name"
+        android:text="课程节数："
+        android:textSize="20dp" />
+    <EditText
+        android:id="@+id/import_clsnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270dp"
+        android:hint="默认2节"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/impot_name"
+        android:layout_marginTop="75dp"
+        android:text="教室号："
+        android:textSize="20dp" />
+    <EditText
+        android:id="@+id/import_class"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@"
+        android:layout_marginTop="350dp"
+        />
+
+    <Button
+        android:id="@+id/import_cancel"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="start"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/back"
+        android:textColor="#11EEEE"
+        android:textSize="20sp"
+        android:layout_marginLeft="8dp" />
+
+    <Button
+        android:id="@+id/import_confirm"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="end"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:gravity="center"
+        android:text="保存"
+        android:background="@drawable/shape"
+        android:textSize="15sp" />
+    <Button
+        android:id="@+id/import_delete"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginRight="85dp"
+        android:layout_marginBottom="160dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="#FF0000"
+        android:textSize="20sp" />
+
+</RelativeLayout>

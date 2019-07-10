@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecordList"
+    android:orientation="vertical">
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:background="@drawable/back"
+            android:id="@+id/btn_records_back"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="计时记录："
+            android:gravity="start"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:text="(点击记录可删除)"
+        android:gravity="start"
+        android:textColor="@color/black"
+        />
+    <ListView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/record_list">
+    </ListView>
+</LinearLayout>

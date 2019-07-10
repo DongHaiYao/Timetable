@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="txcolor0">#E3F1A7</color>
+    <color name="txcolor1">#FFDDFF</color>
+    <color name="txcolor2">#DEFEFE</color>
+    <color name="txcolor3">#DDFFEB</color>
+    <color name="txcolor4">#FFFFBB</color>
+    <color name="txcolor5">#BEC7EB</color>
+    <color name="txcolor6">#EB9C9C</color>
+    <color name="txcolor7">#98EFAA</color>
+    <color name="red">#FF0000</color>
+    <color name="black">#000</color>
+    <color name="white">#FFF</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="orange">#FF9900</color>
+</resources>

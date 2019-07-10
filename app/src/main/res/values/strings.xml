@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">"i课表"</string>
+    <string name="title_activity_main1">MainActivity</string>
+    <string name="title_activity_dialog_import">DialogImport</string>
+</resources>
