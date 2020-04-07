@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -30,6 +31,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     tv61,tv62,tv63,tv64,tv65,
                     tv71,tv72,tv73,tv74,tv75;
     public TextView txMon,txTus,txWed,txThurs,txFri,txSatur,txSun;
+    private ArrayList<TextView> tvList=new ArrayList<TextView>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,79 +56,54 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setTxBackground();//如果tx不为空则设置tx的颜色
         setTextHeight();//根据节数设置高度
     }
+    private void addToList(){
+        tvList.add(tv11);
+        tvList.add(tv12);
+        tvList.add(tv13);
+        tvList.add(tv14);
+        tvList.add(tv15);
+        tvList.add(tv21);
+        tvList.add(tv22);
+        tvList.add(tv23);
+        tvList.add(tv24);
+        tvList.add(tv25);
+        tvList.add(tv31);
+        tvList.add(tv32);
+        tvList.add(tv33);
+        tvList.add(tv34);
+        tvList.add(tv35);
+        tvList.add(tv41);
+        tvList.add(tv42);
+        tvList.add(tv43);
+        tvList.add(tv44);
+        tvList.add(tv45);
+        tvList.add(tv51);
+        tvList.add(tv52);
+        tvList.add(tv53);
+        tvList.add(tv54);
+        tvList.add(tv55);
+        tvList.add(tv61);
+        tvList.add(tv62);
+        tvList.add(tv63);
+        tvList.add(tv64);
+        tvList.add(tv65);
+        tvList.add(tv71);
+        tvList.add(tv72);
+        tvList.add(tv73);
+        tvList.add(tv74);
+        tvList.add(tv75);
+    }
     private void setTextHeight(){
-        tv11.getLayoutParams().height=dip2px(this,69)*getDbClassNum(1);
-        tv12.getLayoutParams().height=dip2px(this,69)*getDbClassNum(2);
-        tv13.getLayoutParams().height=dip2px(this,69)*getDbClassNum(3);
-        tv14.getLayoutParams().height=dip2px(this,69)*getDbClassNum(4);
-        tv15.getLayoutParams().height=dip2px(this,69)*getDbClassNum(5);
-        tv21.getLayoutParams().height=dip2px(this,69)*getDbClassNum(6);
-        tv22.getLayoutParams().height=dip2px(this,69)*getDbClassNum(7);
-        tv23.getLayoutParams().height=dip2px(this,69)*getDbClassNum(8);
-        tv24.getLayoutParams().height=dip2px(this,69)*getDbClassNum(9);
-        tv25.getLayoutParams().height=dip2px(this,69)*getDbClassNum(10);
-        tv31.getLayoutParams().height=dip2px(this,69)*getDbClassNum(11);
-        tv32.getLayoutParams().height=dip2px(this,69)*getDbClassNum(12);
-        tv33.getLayoutParams().height=dip2px(this,69)*getDbClassNum(13);
-        tv34.getLayoutParams().height=dip2px(this,69)*getDbClassNum(14);
-        tv35.getLayoutParams().height=dip2px(this,69)*getDbClassNum(15);
-        tv41.getLayoutParams().height=dip2px(this,69)*getDbClassNum(16);
-        tv42.getLayoutParams().height=dip2px(this,69)*getDbClassNum(17);
-        tv43.getLayoutParams().height=dip2px(this,69)*getDbClassNum(18);
-        tv44.getLayoutParams().height=dip2px(this,69)*getDbClassNum(19);
-        tv45.getLayoutParams().height=dip2px(this,69)*getDbClassNum(20);
-        tv51.getLayoutParams().height=dip2px(this,69)*getDbClassNum(21);
-        tv52.getLayoutParams().height=dip2px(this,69)*getDbClassNum(22);
-        tv53.getLayoutParams().height=dip2px(this,69)*getDbClassNum(23);
-        tv54.getLayoutParams().height=dip2px(this,69)*getDbClassNum(24);
-        tv55.getLayoutParams().height=dip2px(this,69)*getDbClassNum(25);
-        tv61.getLayoutParams().height=dip2px(this,69)*getDbClassNum(26);
-        tv62.getLayoutParams().height=dip2px(this,69)*getDbClassNum(27);
-        tv63.getLayoutParams().height=dip2px(this,69)*getDbClassNum(28);
-        tv64.getLayoutParams().height=dip2px(this,69)*getDbClassNum(29);
-        tv65.getLayoutParams().height=dip2px(this,69)*getDbClassNum(30);
-        tv71.getLayoutParams().height=dip2px(this,69)*getDbClassNum(31);
-        tv72.getLayoutParams().height=dip2px(this,69)*getDbClassNum(32);
-        tv73.getLayoutParams().height=dip2px(this,69)*getDbClassNum(33);
-        tv74.getLayoutParams().height=dip2px(this,69)*getDbClassNum(34);
-        tv75.getLayoutParams().height=dip2px(this,69)*getDbClassNum(35);
+        for (int i = 0; i < 35; i++) {
+          tvList.get(i).getLayoutParams().height=dip2px(this,69)*getDbClassNum(i+1);
+        }
+
     }
     private void setTextContent() {
-        tv11.setText(getDbContent(1));
-        tv12.setText(getDbContent(2));
-        tv13.setText(getDbContent(3));
-        tv14.setText(getDbContent(4));
-        tv15.setText(getDbContent(5));
-        tv21.setText(getDbContent(6));
-        tv22.setText(getDbContent(7));
-        tv23.setText(getDbContent(8));
-        tv24.setText(getDbContent(9));
-        tv25.setText(getDbContent(10));
-        tv31.setText(getDbContent(11));
-        tv32.setText(getDbContent(12));
-        tv33.setText(getDbContent(13));
-        tv34.setText(getDbContent(14));
-        tv35.setText(getDbContent(15));
-        tv41.setText(getDbContent(16));
-        tv42.setText(getDbContent(17));
-        tv43.setText(getDbContent(18));
-        tv44.setText(getDbContent(19));
-        tv45.setText(getDbContent(20));
-        tv51.setText(getDbContent(21));
-        tv52.setText(getDbContent(22));
-        tv53.setText(getDbContent(23));
-        tv54.setText(getDbContent(24));
-        tv55.setText(getDbContent(25));
-        tv61.setText(getDbContent(26));
-        tv62.setText(getDbContent(27));
-        tv63.setText(getDbContent(28));
-        tv64.setText(getDbContent(29));
-        tv65.setText(getDbContent(30));
-        tv71.setText(getDbContent(31));
-        tv72.setText(getDbContent(32));
-        tv73.setText(getDbContent(33));
-        tv74.setText(getDbContent(34));
-        tv75.setText(getDbContent(35));
+
+        for (int i = 0; i < 35; i++) {
+          tvList.get(i).setText(getDbContent(i+1));
+        }
     }
     private void intiviews() {
         txMon=findViewById(R.id.tx_monday);
@@ -178,152 +155,21 @@ public class MainActivity extends Activity implements View.OnClickListener {
         btnVideo=findViewById(R.id.btn_video);
     }
     private void setTextListenners() {
-        tv11.setOnClickListener(this);
-        tv12.setOnClickListener(this);
-        tv13.setOnClickListener(this);
-        tv14.setOnClickListener(this);
-        tv15.setOnClickListener(this);
-        tv21.setOnClickListener(this);
-        tv22.setOnClickListener(this);
-        tv23.setOnClickListener(this);
-        tv24.setOnClickListener(this);
-        tv25.setOnClickListener(this);
-        tv31.setOnClickListener(this);
-        tv32.setOnClickListener(this);
-        tv33.setOnClickListener(this);
-        tv34.setOnClickListener(this);
-        tv35.setOnClickListener(this);
-        tv41.setOnClickListener(this);
-        tv42.setOnClickListener(this);
-        tv43.setOnClickListener(this);
-        tv44.setOnClickListener(this);
-        tv45.setOnClickListener(this);
-        tv51.setOnClickListener(this);
-        tv52.setOnClickListener(this);
-        tv53.setOnClickListener(this);
-        tv54.setOnClickListener(this);
-        tv55.setOnClickListener(this);
-        tv61.setOnClickListener(this);
-        tv62.setOnClickListener(this);
-        tv63.setOnClickListener(this);
-        tv64.setOnClickListener(this);
-        tv65.setOnClickListener(this);
-        tv71.setOnClickListener(this);
-        tv72.setOnClickListener(this);
-        tv73.setOnClickListener(this);
-        tv74.setOnClickListener(this);
-        tv75.setOnClickListener(this);
-
+        for (int i = 0; i < 35; i++) {
+            tvList.get(i).setOnClickListener(this);
+        }
         btnVideo.setOnClickListener(this);
         btnTimeMark.setOnClickListener(this);
         btnRecords.setOnClickListener(this);
     }
     private void setTxBackground(){
-        if (tv11.getText()!=""){
-            randomBgColor(tv11);
+        for (TextView e: tvList
+             ) {
+            if (""!=e.getText()){
+                randomBgColor(e);
+            }
         }
-        if (tv12.getText()!=""){
-            randomBgColor(tv12);
-        }
-        if (tv13.getText()!=""){
-            randomBgColor(tv13);
-        }
-        if (tv14.getText()!=""){
-            randomBgColor(tv14);
-        }
-        if (tv15.getText()!=""){
-            randomBgColor(tv15);
-        }
-        if (tv21.getText()!=""){
-           randomBgColor(tv21);
-        }
-        if (tv22.getText()!=""){
-            randomBgColor(tv22);
-        }
-        if (tv23.getText()!=""){
-            randomBgColor(tv23);
-        }
-        if (tv24.getText()!=""){
-            randomBgColor(tv24);
-        }
-        if (tv25.getText()!=""){
-            randomBgColor(tv25);
-        }
-        if (tv31.getText()!=""){
-            randomBgColor(tv31);
-        }
-        if (tv32.getText()!=""){
-            randomBgColor(tv32);
-        }
-        if (tv33.getText()!=""){
-            randomBgColor(tv33);
-        }
-        if (tv34.getText()!=""){
-            randomBgColor(tv34);
-        }
-        if (tv35.getText()!=""){
-            randomBgColor(tv35);
-        }
-        if (tv41.getText()!=""){
-            randomBgColor(tv41);
-        }
-        if (tv42.getText()!=""){
-            randomBgColor(tv42);
-        }
-        if (tv43.getText()!=""){
-            randomBgColor(tv43);
-        }
-        if (tv44.getText()!=""){
-            randomBgColor(tv44);
-        }
-        if (tv45.getText()!=""){
-            randomBgColor(tv45);
-        }
-        if (tv51.getText()!=""){
-            randomBgColor(tv51);
-        }
-        if (tv52.getText()!=""){
-            randomBgColor(tv52);
-        }
-        if (tv53.getText()!=""){
-            randomBgColor(tv53);
-        }
-        if (tv54.getText()!=""){
-            randomBgColor(tv54);
-        }
-        if (tv55.getText()!=""){
-            randomBgColor(tv55);
-        }
-        if (tv61.getText()!=""){
-            randomBgColor(tv61);
-        }
-        if (tv62.getText()!=""){
-            randomBgColor(tv62);
-        }
-        if (tv63.getText()!=""){
-            randomBgColor(tv63);
-        }
-        if (tv64.getText()!=""){
-            randomBgColor(tv64);
-        }
-        if (tv65.getText()!=""){
-            randomBgColor(tv65);
-        }
-        if (tv71.getText()!=""){
-           randomBgColor(tv71);
-        }
-        if (tv72.getText()!=""){
-            randomBgColor(tv72);
-        }
-        if (tv73.getText()!=""){
-            randomBgColor(tv73);
-        }
-        if (tv74.getText()!=""){
-            randomBgColor(tv74);
-        }
-        if (tv75.getText()!=""){
-            randomBgColor(tv75);
-        }
+
     }
     public void monthDayWeek(Calendar calendar, int month, int day) {
         switch (calendar.get(Calendar.DAY_OF_WEEK)) {
