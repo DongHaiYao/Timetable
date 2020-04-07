@@ -23,12 +23,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button btnTimeMark,btnVideo,btnRecords;
     protected boolean flag = false;
     public TextView tv11,tv12,tv13,tv14,tv15,
-        tv21,tv22,tv23,tv24,tv25,
-        tv31,tv32,tv33,tv34,tv35,
-        tv41,tv42,tv43,tv44,tv45,
-        tv51,tv52,tv53,tv54,tv55,
-        tv61,tv62,tv63,tv64,tv65,
-        tv71,tv72,tv73,tv74,tv75;
+                    tv21,tv22,tv23,tv24,tv25,
+                    tv31,tv32,tv33,tv34,tv35,
+                    tv41,tv42,tv43,tv44,tv45,
+                    tv51,tv52,tv53,tv54,tv55,
+                    tv61,tv62,tv63,tv64,tv65,
+                    tv71,tv72,tv73,tv74,tv75;
     public TextView txMon,txTus,txWed,txThurs,txFri,txSatur,txSun;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -365,8 +365,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
     @Override
     public void onClick(View v) {
-        Intent intent1=new Intent(MainActivity.this,MarkTime.class);
-        Intent intent = new Intent(MainActivity.this, Import.class);
+        Intent intent = new Intent(MainActivity.this,Import.class);
         switch (v.getId()){
             case R.id.tv11:
                 intent.putExtra("flag","0");
@@ -509,15 +508,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.btn_timeMark:
-                startActivity(intent1);
+                startActivity(new Intent(MainActivity.this,MarkTime.class));
                 break;
             case R.id.btn_records:
-                Intent intent2=new Intent(MainActivity.this,RecordList.class);
-                startActivity(intent2);
+                startActivity(new Intent(MainActivity.this,RecordList.class));
                 break;
             case R.id.btn_video:
-                Intent intent3=new Intent(MainActivity.this,video_activity.class);
-                startActivity(intent3);
+                startActivity(new Intent(MainActivity.this,video_activity.class));
                 break;
         }
     }
@@ -525,114 +522,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public String getDbContent(int i){
         String className="";
         String classRoom="";
-        String sql="";
-        switch (i){
-            case 1:
-                sql="select * from classdatas where _id='1'";
-                break;
-            case 2:
-                sql="select * from classdatas where _id='2'";
-                break;
-            case 3:
-                sql="select * from classdatas where _id='3'";
-                break;
-            case 4:
-                sql="select * from classdatas where _id='4'";
-                break;
-            case 5:
-                sql="select * from classdatas where _id='5'";
-                break;
-            case 6:
-                sql="select * from classdatas where _id='6'";
-                break;
-            case 7:
-                sql="select * from classdatas where _id='7'";
-                break;
-            case 8:
-                sql="select * from classdatas where _id='8'";
-                break;
-            case 9:
-                sql="select * from classdatas where _id='9'";
-                break;
-            case 10:
-                sql="select * from classdatas where _id='10'";
-                break;
-            case 11:
-                sql="select * from classdatas where _id='11'";
-                break;
-            case 12:
-                sql="select * from classdatas where _id='12'";
-                break;
-            case 13:
-                sql="select * from classdatas where _id='13'";
-                break;
-            case 14:
-                sql="select * from classdatas where _id='14'";
-                break;
-            case 15:
-                sql="select * from classdatas where _id='15'";
-                break;
-            case 16:
-                sql="select * from classdatas where _id='16'";
-                break;
-            case 17:
-                sql="select * from classdatas where _id='17'";
-                break;
-            case 18:
-                sql="select * from classdatas where _id='18'";
-                break;
-            case 19:
-                sql="select * from classdatas where _id='19'";
-                break;
-            case 20:
-                sql="select * from classdatas where _id='20'";
-                break;
-            case 21:
-                sql="select * from classdatas where _id='21'";
-                break;
-            case 22:
-                sql="select * from classdatas where _id='22'";
-                break;
-            case 23:
-                sql="select * from classdatas where _id='23'";
-                break;
-            case 24:
-                sql="select * from classdatas where _id='24'";
-                break;
-            case 25:
-                sql="select * from classdatas where _id='25'";
-                break;
-            case 26:
-                sql="select * from classdatas where _id='26'";
-                break;
-            case 27:
-                sql="select * from classdatas where _id='27'";
-                break;
-            case 28:
-                sql="select * from classdatas where _id='28'";
-                break;
-            case 29:
-                sql="select * from classdatas where _id='29'";
-                break;
-            case 30:
-                sql="select * from classdatas where _id='30'";
-                break;
-            case 31:
-                sql="select * from classdatas where _id='31'";
-                break;
-            case 32:
-                sql="select * from classdatas where _id='32'";
-                break;
-            case 33:
-                sql="select * from classdatas where _id='33'";
-                break;
-            case 34:
-                sql="select * from classdatas where _id='34'";
-                break;
-            case 35:
-                sql="select * from classdatas where _id='35'";
-                break;
-        }
+        String sql="select * from classdatas where _id='"+i+"'";
         Cursor cursor=dbReader.rawQuery(sql,new String[]{});
         while (cursor.moveToNext()){
             classRoom=cursor.getString(cursor.getColumnIndexOrThrow(classDatabase.ROOMNUM));
@@ -643,114 +533,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //返回课程节数
     public int getDbClassNum(int i){
         int classNum=3;
-        String sql="";
-        switch (i){
-            case 1:
-                sql="select classNum from classdatas where _id='1'";
-                break;
-            case 2:
-                sql="select classNum from classdatas where _id='2'";
-                break;
-            case 3:
-                sql="select classNum from classdatas where _id='3'";
-                break;
-            case 4:
-                sql="select classNum from classdatas where _id='4'";
-                break;
-            case 5:
-                sql="select classNum from classdatas where _id='5'";
-                break;
-            case 6:
-                sql="select classNum from classdatas where _id='6'";
-                break;
-            case 7:
-                sql="select classNum from classdatas where _id='7'";
-                break;
-            case 8:
-                sql="select classNum from classdatas where _id='8'";
-                break;
-            case 9:
-                sql="select classNum from classdatas where _id='9'";
-                break;
-            case 10:
-                sql="select classNum from classdatas where _id='10'";
-                break;
-            case 11:
-                sql="select classNum from classdatas where _id='11'";
-                break;
-            case 12:
-                sql="select classNum from classdatas where _id='12'";
-                break;
-            case 13:
-                sql="select classNum from classdatas where _id='13'";
-                break;
-            case 14:
-                sql="select classNum from classdatas where _id='14'";
-                break;
-            case 15:
-                sql="select classNum from classdatas where _id='15'";
-                break;
-            case 16:
-                sql="select classNum from classdatas where _id='16'";
-                break;
-            case 17:
-                sql="select classNum from classdatas where _id='17'";
-                break;
-            case 18:
-                sql="select classNum from classdatas where _id='18'";
-                break;
-            case 19:
-                sql="select classNum from classdatas where _id='19'";
-                break;
-            case 20:
-                sql="select classNum from classdatas where _id='20'";
-                break;
-            case 21:
-                sql="select classNum from classdatas where _id='21'";
-                break;
-            case 22:
-                sql="select classNum from classdatas where _id='22'";
-                break;
-            case 23:
-                sql="select classNum from classdatas where _id='23'";
-                break;
-            case 24:
-                sql="select classNum from classdatas where _id='24'";
-                break;
-            case 25:
-                sql="select classNum from classdatas where _id='25'";
-                break;
-            case 26:
-                sql="select classNum from classdatas where _id='26'";
-                break;
-            case 27:
-                sql="select classNum from classdatas where _id='27'";
-                break;
-            case 28:
-                sql="select classNum from classdatas where _id='28'";
-                break;
-            case 29:
-                sql="select classNum from classdatas where _id='29'";
-                break;
-            case 30:
-                sql="select classNum from classdatas where _id='30'";
-                break;
-            case 31:
-                sql="select classNum from classdatas where _id='31'";
-                break;
-            case 32:
-                sql="select classNum from classdatas where _id='32'";
-                break;
-            case 33:
-                sql="select classNum from classdatas where _id='33'";
-                break;
-            case 34:
-                sql="select classNum from classdatas where _id='34'";
-                break;
-            case 35:
-                sql="select classNum from classdatas where _id='35'";
-                break;
-        }
+        String sql="select classNum from classdatas where _id='"+i+"'";
         Cursor cursor=dbReader.rawQuery(sql,new String[]{});
         while (cursor.moveToNext()){
             classNum=Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(classDatabase.CLASSNUM)));
